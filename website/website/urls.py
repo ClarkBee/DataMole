@@ -19,4 +19,5 @@ from testapp import views as test_Views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 	url(r'^$', test_Views.index),
+	url(r'^dahua$', test_Views.dahua),
 ]
