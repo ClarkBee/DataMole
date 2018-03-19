@@ -12,4 +12,6 @@ def index(request):
 	
 def dahua(request):
     dahua = ts.get_realtime_quotes('002236')
-    return HttpResponse(dahua.iloc[0,3])
+    change = (float(dahua.iloc[0,3])-float(dahua.iloc[0,2]))/float(dahua.iloc[0,2])*100
+    rt = '%s\t\t%.2f%%' %(dahua.iloc[0,3], change)
+    return HttpResponse(rt)
